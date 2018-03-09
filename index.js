@@ -5,7 +5,6 @@ var qs = require('querystring');
 var fs = require('fs');
 
 function handlePostData(postData) {
-  console.log(postData);
   var realjson = ""
   
   for(var prop in postData){
@@ -15,6 +14,7 @@ function handlePostData(postData) {
   realjson = JSON.parse(realjson)
 
   request = realjson["request"]
+  
   if(request["type"] == "LaunchRequest"){
     return;
   } else if(request["type"] == "IntentRequest"){
