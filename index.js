@@ -6,7 +6,23 @@ var fs = require('fs');
 
 function handlePostData(postData) {
   console.log(postData);
-  fs.writeFile("/home/ubuntu/message", "!momo");
+  var realjson = ""
+  
+  for(var prop in postData){
+    realjson = prop
+  }
+  
+  realjson = JSON.parse(realjson)
+
+  var category = realjson["request"]["intent"]["name"]
+
+  console.log(category)
+  if(category == "meow")
+    fs.writeFile("/home/ubuntu/message", "!meow");
+  else if (category == "MimiPic")
+    fs.writeFile("/home/ubuntu/message", "!mimi");
+  else 
+    fs.writeFile("/home/ubuntu/message", "!momo");
 }
 
 const answer = (title, message) => {
