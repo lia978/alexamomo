@@ -24,8 +24,10 @@ function handlePostData(postData) {
       fs.writeFile("/home/ubuntu/message", "!meow");
     else if(category == "MimiPic")
       fs.writeFile("/home/ubuntu/message", "!mimi");
-    else 
+    else if(category == "MomoPic")
       fs.writeFile("/home/ubuntu/message", "!momo");
+    else if (category == "bitcoin")
+      fs.writeFile("/home/ubuntu/message", "$btc");
   }
 }
 
