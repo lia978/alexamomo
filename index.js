@@ -14,15 +14,19 @@ function handlePostData(postData) {
   
   realjson = JSON.parse(realjson)
 
-  var category = realjson["request"]["intent"]["name"]
-
-  console.log(category)
-  if(category == "meow")
-    fs.writeFile("/home/ubuntu/message", "!meow");
-  else if (category == "MimiPic")
-    fs.writeFile("/home/ubuntu/message", "!mimi");
-  else 
-    fs.writeFile("/home/ubuntu/message", "!momo");
+  request = realjson["request"]
+  if(request["type"] == "LaunchRequest"){
+    return;
+  } else if(request["type"] == "IntentRequest"){
+    var category = request["intent"]["name"]
+    console.log(category)
+    if(category == "meow")
+      fs.writeFile("/home/ubuntu/message", "!meow");
+    else if(category == "MimiPic")
+      fs.writeFile("/home/ubuntu/message", "!mimi");
+    else 
+      fs.writeFile("/home/ubuntu/message", "!momo");
+  }
 }
 
 const answer = (title, message) => {
