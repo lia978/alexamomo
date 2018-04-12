@@ -30,7 +30,8 @@ function handlePostData(postData) {
       fs.writeFile("/home/ubuntu/message", "$btc");
     else if (category == "claim")
       fs.writeFile("/home/ubuntu/message", "!claim");
-
+    else if (category == "tip")
+      fs.writeFile("/home/ubuntu/message", "!tip @kara#2369 1");
   }
 }
 
