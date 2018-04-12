@@ -29,7 +29,7 @@ function handlePostData(postData) {
     else if (category == "bitcoin")
       fs.writeFile("/home/ubuntu/message", "$btc");
     else if (category == "claim")
-      fs.writeFile("home/ubuntu/message", "!claim");
+      fs.writeFile("/home/ubuntu/message", "!claim");
 
   }
 }
