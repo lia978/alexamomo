@@ -28,6 +28,9 @@ function handlePostData(postData) {
       fs.writeFile("/home/ubuntu/message", "!momo");
     else if (category == "bitcoin")
       fs.writeFile("/home/ubuntu/message", "$btc");
+    else if (category == "claim")
+      fs.writeFile("home/ubuntu/message", "!claim");
+
   }
 }
 
